@@ -1,0 +1,37 @@
+//To calculate area and perimeter of square you don't require width as you only need length so width variable is unused here
+
+package Shape;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Square extends Shape{
+    double area;
+    double perimeter;
+    
+    public void getData() {
+        Scanner scanner = new Scanner (System.in);
+        while (true) {
+            try {
+                System.out.print("Enter length: ");
+                length = scanner.nextDouble();
+                break;
+            }
+            catch (InputMismatchException err) {
+                scanner.next();
+                System.out.print("Not a valid number.");
+            }
+        }
+        
+    }
+    public void outputAreaPeri() {
+        area = length * length;
+        perimeter = 4 * length;
+        System.out.println("Area is: "+area);
+        System.out.println("Perimeter is: "+perimeter);
+    }
+    
+//    public static void main (String[] args) {
+//        Square sq = new Square();
+//        sq.getData();
+//}
+}
