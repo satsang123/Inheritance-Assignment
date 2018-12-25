@@ -1,0 +1,59 @@
+//this is where the main method is 
+//main method has main menu screen with instructions on how to use this program
+//there is a switch statement that allows user to choose the number corresponding to the shape
+package Shape;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class AreaPerimeterCalc {
+
+    public static void main(String[] args) {
+        String choice;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Area and Perimeter Calculator for Various Shapes!");
+        while (true) {
+            try {
+        System.out.println("Enter 1 to calculate rectangle, 2 to calculate square, 3 to calculate right-angled triangle, 4 to calculate circle, 0 to exit");
+        choice = scanner.next();
+
+        switch (choice) {
+            case "1":
+                System.out.println("Area and perimeter of rectangle:");
+                Rectangle r = new Rectangle();
+                r.getData();
+                r.outputAreaPeri();
+                break;
+            case "2":
+                System.out.println("Area and perimeter of square:");
+                Square sq = new Square();
+                sq.getData();
+                sq.outputAreaPeri();
+                break;
+            case "3":
+                System.out.println("Area and perimeter of right-angled triangle:");
+                Triangle t = new Triangle();
+                t.getData();
+                t.outputAreaPeri();
+                break;
+            case "4":
+                System.out.println("Area and circumference of circle: ");
+                Circle c = new Circle();
+                c.getData();
+                c.outputAreaPeri();
+                break;
+            case "0":
+                System.out.println("Thank you for using this program.");
+                System.exit(0);
+            default:
+                System.out.println("Invalid!");
+                break;
+      
+        }
+    } catch (InputMismatchException err) {
+        System.out.println("Invalid!");
+        
+    }
+}
+    }
+}
