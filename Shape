@@ -1,0 +1,33 @@
+//this is the superclass called Shape
+//it has attributes and behaviors length, width, radius, getData, outputAreaPeri which subclasses use
+
+package Shape;
+import java.util.Scanner;
+    
+class Shape {
+    double length;
+    double width;
+    double radius;
+    Shape () {
+        length = 0;
+        width = 0;
+        radius = 0;
+    }
+    public void getData() {
+        System.out.println("Enter length and width: ");
+        Scanner scanner = new Scanner (System.in);
+        length = scanner.nextDouble();
+        width = scanner.nextDouble();
+        radius = scanner.nextDouble();
+    }
+    public void outputAreaPeri() {
+        
+    }
+}
+
+
+
+
+
+
+
