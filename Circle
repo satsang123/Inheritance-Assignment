@@ -1,0 +1,38 @@
+//Circle doesn't use length and width so new variable radius is created to calculate circle's area and circumference
+
+package Shape;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Circle extends Shape {
+    double radius;
+    double area;
+    double circumference;
+    
+public void getData() {
+    Scanner scanner = new Scanner (System.in);
+    while (true) {
+        try {
+            System.out.print("Enter radius: ");
+            radius = scanner.nextDouble();
+            break;
+        }
+        catch (InputMismatchException err) {
+            scanner.next();
+            System.out.print("Not a valid number.");
+        }
+    }
+        
+}
+public void outputAreaPeri() {
+        area = Math.PI * radius*radius;
+        circumference = 2 * Math.PI * radius;
+        System.out.println("Area is: "+area);
+        System.out.println("Circumference is: "+ circumference);
+    }
+    
+//public static void main (String[] args) {
+//        Circle c = new Circle();
+//       c.getData();
+//    }
+}
