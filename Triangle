@@ -1,0 +1,41 @@
+//class Triangle doesn't use length and width so new variables base and height are created 
+
+package Shape;
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Triangle extends Shape {
+    double base;
+    double height;
+    double area;
+    double perimeter;
+     
+public void getData() {
+    Scanner scanner = new Scanner (System.in);
+    while (true) {
+        try {
+            System.out.print("Enter base: ");
+            base = scanner.nextDouble();
+            System.out.print("Enter height: ");
+            height = scanner.nextDouble();
+            break;
+        }
+        catch (InputMismatchException err) {
+            scanner.next();
+            System.out.print("Not a valid number.");
+        }
+    }
+    
+}
+public void outputAreaPeri() {
+	area = 0.5 * base * height;
+        perimeter = base + height + Math.sqrt(base*base + height*height);
+	System.out.println("Area is: "+area);
+        System.out.println("Perimeter is: "+perimeter);
+    }
+
+//public static void main (String[] args) {
+//    Triangle t = new Triangle();
+//    t.getData();
+//}
+}
