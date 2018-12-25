@@ -1,0 +1,40 @@
+//this is a subclass called Rectangle that inherits from superclass Shape
+//InputMismatchException method is called in every subclass for checking to see if user makes an error during user-input
+package Shape;
+
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Rectangle extends Shape {
+
+    double area;
+    double perimeter;
+
+    public void getData() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.print("Enter length: ");
+                length = scanner.nextDouble();
+                System.out.print("Enter width: ");
+                width = scanner.nextDouble();
+                break;
+            } catch (InputMismatchException err) {
+                scanner.next();
+                System.out.print("Not a valid number.");
+            }
+        }
+    }
+
+    public void outputAreaPeri() {
+        area = length * width;
+        perimeter = 2 * (length + width);
+        System.out.println("Area is: " + area);
+        System.out.println("Perimeter is: " + perimeter);
+    }
+
+//    public static void main (String[] args) {
+//        Rectangle r = new Rectangle();
+//        r.getData();
+//    }
+}
